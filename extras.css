@@ -1,0 +1,42 @@
+/* =============================================
+   ADDITIONAL ANIMATIONS & EFFECTS
+   ============================================= */
+
+/* Staggered reveal for grid items */
+.skill-card:nth-child(1) { transition-delay: 0.05s; }
+.skill-card:nth-child(2) { transition-delay: 0.10s; }
+.skill-card:nth-child(3) { transition-delay: 0.15s; }
+.skill-card:nth-child(4) { transition-delay: 0.20s; }
+.skill-card:nth-child(5) { transition-delay: 0.25s; }
+.skill-card:nth-child(6) { transition-delay: 0.30s; }
+.skill-card:nth-child(7) { transition-delay: 0.35s; }
+.skill-card:nth-child(8) { transition-delay: 0.40s; }
+
+/* Text selection */
+::selection {
+  background: var(--red);
+  color: var(--white);
+}
+
+/* Focus visible */
+*:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+/* Red dividers for section separation */
+.section::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--red);
+  position: absolute;
+  top: 0;
+  left: 40px;
+}
+
+/* Cursor interaction helper */
+a, button, .project-card, .skill-card, .highlight-item {
+  cursor: none;
+}

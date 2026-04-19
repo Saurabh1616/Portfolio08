@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Saurabh — Full-Stack Developer & Creative Technologist. Premium portfolio showcasing bleeding-edge projects and experiences." />
+  <title>SAURABH — Creative Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Permanent+Marker&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="extras.css" />
+</head>
+<body>
+  <!-- ========== CUSTOM CURSOR ========== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-text" id="loaderText">INITIALIZING</div>
+      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+      <div class="loader-counter" id="loaderCounter">0%</div>
+      <div class="loader-glitch">SAURABH</div>
+    </div>
+  </div>
+
+  <!-- ========== NOISE OVERLAY ========== -->
+  <div class="noise-overlay"></div>
+
+  <!-- ========== PARTICLE CANVAS ========== -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ========== HEADER / NAV ========== -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="#home" class="nav-logo" id="navLogo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">SAU</span>
+        <span class="logo-accent">RABH</span>
+        <span class="logo-bracket">]</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link" data-text="ABOUT">ABOUT</a>
+        <a href="#skills" class="nav-link" data-text="SKILLS">SKILLS</a>
+        <a href="#projects" class="nav-link" data-text="WORK">WORK</a>
+        <a href="#contact" class="nav-link" data-text="CONTACT">CONTACT</a>
+      </div>
+      <button class="nav-cta" id="navCta">HIRE ME ↗</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-link">01. ABOUT</a>
+    <a href="#skills" class="mobile-link">02. SKILLS</a>
+    <a href="#projects" class="mobile-link">03. WORK</a>
+    <a href="#contact" class="mobile-link">04. CONTACT</a>
+  </div>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-scanline"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag" id="heroTag">
+        <span class="tag-dot"></span>
+        AVAILABLE FOR WORK · 2026
+      </div>
+
+      <h1 class="hero-title">
+        <span class="title-line" id="titleLine1">
+          <span class="title-word glitch-text" data-text="CREATIVE">CREATIVE</span>
+        </span>
+        <span class="title-line" id="titleLine2">
+          <span class="title-word outline-text">DEVELOPER</span>
+        </span>
+        <span class="title-line" id="titleLine3">
+          <span class="title-word red-fill">&amp; VISIONARY</span>
+        </span>
+      </h1>
+
+      <p class="hero-sub" id="heroSub">
+        I craft <span class="highlight">immersive digital experiences</span> that push boundaries.
+        Code is my art, interfaces are my canvas.
+      </p>
+
+      <div class="hero-actions" id="heroActions">
+        <a href="#projects" class="btn-primary" id="btnWork">
+          <span class="btn-text">VIEW MY WORK</span>
+          <span class="btn-glow"></span>
+        </a>
+        <a href="#contact" class="btn-secondary" id="btnContact">
+          <span>LET'S TALK</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="hero-stats" id="heroStats">
+        <div class="stat">
+          <span class="stat-num" data-target="50">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Exp</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span>
+          <span class="stat-label">Passion</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" id="heroVisual">
+      <div class="avatar-container">
+        <div class="avatar-ring ring-1"></div>
+        <div class="avatar-ring ring-2"></div>
+        <div class="avatar-ring ring-3"></div>
+        <div class="avatar-core">
+          <div class="avatar-letter">S</div>
+          <div class="avatar-scan"></div>
+        </div>
+        <div class="orbit-dot dot-1"></div>
+        <div class="orbit-dot dot-2"></div>
+        <div class="orbit-dot dot-3"></div>
+      </div>
+      <div class="floating-badges">
+        <div class="badge badge-1"><i class="fab fa-react"></i> React</div>
+        <div class="badge badge-2"><i class="fab fa-node-js"></i> Node.js</div>
+        <div class="badge badge-3"><i class="fab fa-python"></i> Python</div>
+        <div class="badge badge-4"><i class="fas fa-database"></i> MongoDB</div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ========== MARQUEE BAND ========== -->
+  <div class="marquee-band">
+    <div class="marquee-track">
+      <span>FULL-STACK</span><span class="sep">✦</span>
+      <span>UI/UX DESIGN</span><span class="sep">✦</span>
+      <span>REACT</span><span class="sep">✦</span>
+      <span>NODE.JS</span><span class="sep">✦</span>
+      <span>CREATIVE CODING</span><span class="sep">✦</span>
+      <span>AI INTEGRATION</span><span class="sep">✦</span>
+      <span>FULL-STACK</span><span class="sep">✦</span>
+      <span>UI/UX DESIGN</span><span class="sep">✦</span>
+      <span>REACT</span><span class="sep">✦</span>
+      <span>NODE.JS</span><span class="sep">✦</span>
+      <span>CREATIVE CODING</span><span class="sep">✦</span>
+      <span>AI INTEGRATION</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-label">
+        <span class="label-num">01</span>
+        <span class="label-line"></span>
+        <span class="label-text">ABOUT ME</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <h2 class="section-title">
+            I'M A <span class="red-text">BUILDER</span><br/>
+            WHO LOVES<br/>
+            <span class="outline-heading">CHALLENGES</span>
+          </h2>
+          <div class="about-card">
+            <div class="about-card-header">
+              <div class="terminal-dot red"></div>
+              <div class="terminal-dot yellow"></div>
+              <div class="terminal-dot green"></div>
+              <span>bio.json</span>
+            </div>
+            <div class="about-card-body">
+              <pre class="code-block"><code><span class="code-key">"name"</span>: <span class="code-val">"Saurabh"</span>,
+<span class="code-key">"role"</span>: <span class="code-val">"Full-Stack Developer"</span>,
+<span class="code-key">"location"</span>: <span class="code-val">"India 🇮🇳"</span>,
+<span class="code-key">"passion"</span>: <span class="code-val">"Crafting the future"</span>,
+<span class="code-key">"coffee"</span>: <span class="code-val">∞</span></code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-right reveal">
+          <p class="about-desc">
+            Hey! I'm <strong>Saurabh</strong> — a full-stack developer and creative technologist 
+            obsessed with building things that <span class="highlight">actually matter</span>. 
+            From AI-powered apps to immersive web experiences, I bring ideas to life with 
+            clean code and bold design.
+          </p>
+          <p class="about-desc">
+            I believe great software is a <span class="highlight">blend of art and engineering</span> — 
+            every pixel, every function, every interaction should feel intentional. 
+            I'm always pushing boundaries, learning fast, and shipping faster.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-bolt"></i>
+              <span>Fast Learner</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-fire"></i>
+              <span>Passionate Builder</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-brain"></i>
+              <span>AI Enthusiast</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-rocket"></i>
+              <span>Startup Mindset</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-label">
+        <span class="label-num">02</span>
+        <span class="label-line"></span>
+        <span class="label-text">ARSENAL</span>
+      </div>
+
+      <h2 class="section-title centered reveal">
+        MY <span class="red-text">TECH</span><br/>
+        <span class="outline-heading">STACK</span>
+      </h2>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal" id="skill1">
+          <div class="skill-icon"><i class="fab fa-react"></i></div>
+          <div class="skill-name">React</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="92">
+              <div class="skill-fill"></div>
+            </div>
+            <span class="skill-pct">92%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" id="skill2">
+          <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+          <div class="skill-name">Node.js</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="88">
+              <div class="skill-fill"></div>
+            </div>
+            <span class="skill-pct">88%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" id="skill3">
+          <div class="skill-icon"><i class="fab fa-python"></i></div>
+          <div class="skill-name">Python</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="85">
+              <div class="skill-fill"></div>
+            </div>
+            <span class="skill-pct">85%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" id="skill4">
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
+          <div class="skill-name">MongoDB</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="80">
+              <div class="skill-fill"></div>
+            </div>
+            <span class="skill-pct">80%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" id="skill5">
+          <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="95">
+              <div class="skill-fill"></div>
+            </div>
+            <span class="skill-pct">95%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" id="skill6">
+          <div class="skill-icon"><i class="fas fa-robot"></i></div>
+          <div class="skill-name">AI/ML</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="75">
+              <div class="skill-fill"></div>
+            </div>
+            <span class="skill-pct">75%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" id="skill7">
+          <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+          <div class="skill-name">CSS/Design</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="90">
+              <div class="skill-fill"></div>
+            </div>
+            <span class="skill-pct">90%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" id="skill8">
+          <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+          <div class="skill-name">Git/DevOps</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="83">
+              <div class="skill-fill"></div>
+            </div>
+            <span class="skill-pct">83%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-label">
+        <span class="label-num">03</span>
+        <span class="label-line"></span>
+        <span class="label-text">SELECTED WORK</span>
+      </div>
+
+      <h2 class="section-title centered reveal">
+        PROJECTS THAT<br/>
+        <span class="red-text">HIT</span> <span class="outline-heading">DIFFERENT</span>
+      </h2>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card reveal" id="proj1">
+          <div class="project-number">01</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">AI</span>
+              <span class="tag">Node.js</span>
+            </div>
+            <h3 class="project-title">Mental Health<br/><span class="red-text">Tracker</span></h3>
+            <p class="project-desc">AI-powered mental wellness dashboard with burnout detection, mood analytics, and personalized insights. Real-time emotion tracking meets machine intelligence.</p>
+            <div class="project-links">
+              <a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a>
+              <a href="#" class="proj-link primary"><i class="fas fa-external-link-alt"></i> Live</a>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal" id="proj2">
+          <div class="project-number">02</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">Vue.js</span>
+              <span class="tag">Socket.io</span>
+              <span class="tag">MongoDB</span>
+            </div>
+            <h3 class="project-title">VibeCheck<br/><span class="red-text">Campus Chat</span></h3>
+            <p class="project-desc">Anonymous, AI-driven campus chat platform with real-time messaging, mood detection, and a safe space UI built for college students.</p>
+            <div class="project-links">
+              <a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a>
+              <a href="#" class="proj-link primary"><i class="fas fa-external-link-alt"></i> Live</a>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal featured" id="proj3">
+          <div class="project-number">03</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+            <h3 class="project-title">Context<br/><span class="red-text">Switcher Pro</span></h3>
+            <p class="project-desc">A premium productivity command center with context-aware task management, session tracking, and intelligence-driven focus coaching — your second brain.</p>
+            <div class="project-links">
+              <a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a>
+              <a href="#" class="proj-link primary"><i class="fas fa-external-link-alt"></i> Live</a>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+          <div class="featured-badge">FEATURED</div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card reveal" id="proj4">
+          <div class="project-number">04</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">React</span>
+            </div>
+            <h3 class="project-title">Anti-Gravity<br/><span class="red-text">Portfolio</span></h3>
+            <p class="project-desc">This very portfolio — a testament to borderless creativity. Blazing animations, cinematic design, and bleeding-edge web tech. Meta, right?</p>
+            <div class="project-links">
+              <a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a>
+              <a href="#" class="proj-link primary"><i class="fas fa-external-link-alt"></i> Live</a>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+      </div>
+
+      <div class="projects-cta reveal">
+        <a href="https://github.com" target="_blank" class="btn-ghost" id="moreProjects">
+          <i class="fab fa-github"></i>
+          SEE ALL PROJECTS ON GITHUB
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS / EXPERIENCE SECTION ========== -->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <div class="section-label">
+        <span class="label-num">04</span>
+        <span class="label-line"></span>
+        <span class="label-text">EXPERIENCE</span>
+      </div>
+      <h2 class="section-title centered reveal">
+        THE <span class="red-text">JOURNEY</span><br/>
+        <span class="outline-heading">SO FAR</span>
+      </h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal" id="tl1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2025 — PRESENT</span>
+            <h3 class="timeline-role">Freelance Full-Stack Dev</h3>
+            <span class="timeline-company">Self-Employed · Remote</span>
+            <p class="timeline-desc">Building premium web apps, AI integrations, and digital products for clients worldwide. From concept to deployment.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal" id="tl2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2024 — 2025</span>
+            <h3 class="timeline-role">Junior Developer</h3>
+            <span class="timeline-company">Tech Startup · India</span>
+            <p class="timeline-desc">Worked on React dashboards and REST APIs. Contributed to scaling a SaaS platform from 0 to 10k users.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal" id="tl3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2022 — 2024</span>
+            <h3 class="timeline-role">CS Student &amp; Self-Learner</h3>
+            <span class="timeline-company">University · India</span>
+            <p class="timeline-desc">Dove deep into algorithms, web dev, and AI/ML. Built 20+ personal projects and won 3 hackathons.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-label">
+        <span class="label-num">05</span>
+        <span class="label-line"></span>
+        <span class="label-text">GET IN TOUCH</span>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <h2 class="section-title">
+            LET'S BUILD<br/>
+            SOMETHING<br/>
+            <span class="red-text">INSANE</span>
+          </h2>
+          <p class="contact-sub">Open to freelance, collaborations, and exciting opportunities. Don't be shy — drop a message.</p>
+          <div class="contact-socials">
+            <a href="mailto:saurabh@example.com" class="social-link" id="emailLink" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+              <span>saurabh@example.com</span>
+            </a>
+            <a href="https://github.com" target="_blank" class="social-link" id="githubLink" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+              <span>github.com/saurabh</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="social-link" id="linkedinLink" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+              <span>linkedin.com/in/saurabh</span>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-link" id="twitterLink" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+              <span>@saurabh_dev</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-right reveal">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="nameInput">YOUR NAME</label>
+              <input type="text" id="nameInput" name="name" placeholder="John Doe" autocomplete="name" required />
+              <span class="input-border"></span>
+            </div>
+            <div class="form-group">
+              <label for="emailInput">YOUR EMAIL</label>
+              <input type="email" id="emailInput" name="email" placeholder="john@example.com" autocomplete="email" required />
+              <span class="input-border"></span>
+            </div>
+            <div class="form-group">
+              <label for="subjectInput">SUBJECT</label>
+              <input type="text" id="subjectInput" name="subject" placeholder="Let's collaborate!" required />
+              <span class="input-border"></span>
+            </div>
+            <div class="form-group">
+              <label for="messageInput">MESSAGE</label>
+              <textarea id="messageInput" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+              <span class="input-border"></span>
+            </div>
+            <button type="submit" class="btn-primary full-width" id="submitBtn">
+              <span class="btn-text">SEND MESSAGE</span>
+              <i class="fas fa-paper-plane"></i>
+              <span class="btn-glow"></span>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class="fas fa-check-circle"></i>
+              Message sent! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">SAU</span>
+        <span class="logo-accent">RABH</span>
+        <span class="logo-bracket">]</span>
+      </div>
+      <p class="footer-tagline">BUILDING THE <span class="red-text">FUTURE</span> — ONE COMMIT AT A TIME</p>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SAURABH. ALL RIGHTS RESERVED.</span>
+      <span>CRAFTED WITH ❤️ &amp; ☕</span>
+    </div>
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
